@@ -58,7 +58,7 @@ return items.id!==item.id
     <>
       <BrowserRouter>
         <CartContext.Provider
-          value={{ cartitems, setcartitems, count, setcount, addtocart,handledelete }}>
+          value={{ cartitems, setcartitems, count, setcount, addtocart,handledelete,alert }}>
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />

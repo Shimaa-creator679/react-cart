@@ -33,10 +33,10 @@ const ProductDetail = () => {
       <span className='badge bg-warning'>{productdetail.price}</span>
     </p>
     
-    <a  className="btn btn-info" onClick={()=>{
+    <button  className="btn btn-info"  onClick={()=>{
       cart.addtocart(productdetail)
       console.log("produgth");
-    }}>add to card</a>
+    }}>add to card</button>
   </div>
 </div>
     </div>
