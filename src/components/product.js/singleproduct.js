@@ -22,8 +22,8 @@ export default function Singleproduct({item}) {
           <span className='badge bg-warning'>{item.price}</span>
         </p>
         <Link to={`/productDetail/${item.id}`}  className="btn btn-primary mx-3" >show Details</Link>
-        <a  onClick={()=>{
-          cart.addtocart(item)}} className="btn btn-info">add to card</a>
+        <button onClick={()=>{
+          cart.addtocart(item)}} className="btn btn-info">add to card</button>
           
         
       </div>
