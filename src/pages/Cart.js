@@ -1,11 +1,11 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import{CartContext}from "../store/cartcontext"
 import { Pagetitle } from '../components/layout.js/pagetitle';
 
 import Alertcomponent from '../components/alert';
 
 export default function Cart() {
-  const[alert,setalert]=useState(false);
+
   const cart=useContext(CartContext);
 
   return (
@@ -36,7 +36,7 @@ export default function Cart() {
 cart.setcount(cart.count-1);
 
 
-setalert(true);
+cart.setalert(true);
           }}  >delete</bautton></td>
         
               </tr>
@@ -50,7 +50,7 @@ setalert(true);
       </div>
       
     </div>
-    {alert?( <Alertcomponent alert={alert} setalert={setalert}/>):("")}
+    {cart.alert?( <Alertcomponent />):("")}
  
 
     </div>
