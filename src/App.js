@@ -11,8 +11,9 @@ import Swal from "sweetalert2";
 
 function App() {
   const [cartitems, setcartitems] = useState([]);
-  const [count, setcount] = useState(0);
+
     const[alert,setalert]=useState(false);
+    const [quantity,setquantity]=useState(0);
 
   const addtocart = (item) => {
     let newitem = cartitems.find((product) => {
@@ -21,6 +22,10 @@ function App() {
 
     if (newitem) {
       newitem.quantity = newitem.quantity + 1;
+      setquantity((quantity)=>{
+       return quantity+1
+      })
+      console.log(quantity);
 
       const ubdatedcartitems = cartitems.map((pro) => {
         return pro.id === item.id ? newitem : pro;
@@ -43,7 +48,7 @@ function App() {
       `,
       });
     }
-    setcount(count + 1);
+    setquantity(quantity+1);
   };
 
   const handledelete=(items)=>{
@@ -58,7 +63,7 @@ return items.id!==item.id
     <>
       <BrowserRouter>
         <CartContext.Provider
-          value={{ cartitems, setcartitems, count, setcount, addtocart,handledelete,alert ,setalert}}>
+          value={{ cartitems, setcartitems, addtocart,handledelete,alert ,setalert, quantity,setquantity}}>
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />

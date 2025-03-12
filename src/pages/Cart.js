@@ -33,7 +33,7 @@ export default function Cart() {
           <td>{item.quantity}</td>
           <td><bautton className="btn btn-primary" onClick={()=>{
             cart.handledelete(item)
-cart.setcount(cart.count-1);
+cart.setquantity(0);
 
 
 cart.setalert(true);
